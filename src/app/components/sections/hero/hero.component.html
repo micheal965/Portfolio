@@ -1,0 +1,67 @@
+<div class="absolute inset-0 grid-bg opacity-30"></div>
+<div
+    class="absolute top-1/4 left-1/4 -translate-x-1/4 -translate-y-1/2 w-96 h-96 bg-blue-600/30 blur-[120px] rounded-full">
+</div>
+<div
+    class="absolute top-1/4 right-1/4 translate-x-1/4 -translate-y-1/2 w-96 h-96 bg-purple-600/30 blur-[120px] rounded-full">
+</div>
+<section class="relative min-h-screen flex flex-col items-center justify-center text-white overflow-hidden">
+
+    <div class="relative z-10 text-center px-4">
+        <div [appScrollTrigger]="'animate-slideDown'" class="[animation-delay:0.2s]">
+            <p class="text-gray-400 text-2xl mb-2">Hello, I'm</p>
+
+            <h1 class="text-6xl md:text-7xl font-bold mb-4 tracking-tight">
+                <span class="bg-gradient-to-br from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                    Micheal Ghobrial
+                </span>
+            </h1>
+        </div>
+
+        <div [appScrollTrigger]="'animate-slide-right'"
+            class="flex items-center justify-center gap-2 mb-8 opacity-0 [animation-delay:0.4s]">
+            <ngx-typed-js [strings]="typingStrings" [typeSpeed]="50" [backSpeed]="30" [startDelay]="0"
+                [backDelay]="1500" [loop]="true" [showCursor]="false">
+                <span class="typing text-xl md:text-2xl font-semibold text-slate-300"></span>
+            </ngx-typed-js>
+            <span class="w-1 h-8 bg-skyBlue animate-pulse"></span>
+        </div>
+
+        <p class="text-gray-400 mb-10 max-w-md mx-auto">Engineering powerful frontend and backend solutions</p>
+
+
+        <div [appScrollTrigger]="'animate-slideUp'" class="opacity-0  [animation-delay:0.8s]">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+                <button
+                    class="px-8 py-3 bg-skyBlue text-black font-bold rounded-xl shadow-lg hover:shadow-skyBlue/40 hover:scale-105 transition-all">
+                    View My Work
+                </button>
+                <button
+                    class="px-8 py-3 bg-black/40 border border-skyBlue/40 rounded-xl hover:bg-gray-800 transition-all">
+                    Get In Touch
+                </button>
+            </div>
+
+            <a href="./assets/Micheal_Ghobrial_CV.pdf" download
+                class="group flex items-center gap-2 px-10 py-3 rounded-lg bg-gradient-to-r from-sky-400 to-indigo-600 font-bold hover:opacity-90 transition-all mx-auto w-max">
+                <span class="material-icons animate-bounce">download</span>
+                Download CV
+            </a>
+        </div>
+        <div [appScrollTrigger]="'animate-slideDown'"
+            class="opacity-0 links flex gap-8 justify-center mt-16 text-cyan-400 [animation-delay:0.8s]">
+            <a href="https://github.com/micheal965" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/micheal-ghobrial" target="_blank"><i
+                    class="fa-brands fa-linkedin-in"></i></a>
+            <a href="mailto:michealghobriall@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+            <a href="https://wa.me/201201605049" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <a class="absolute bottom-28 animate-bounce text-slate-300 hover:text-skyBlue cursor-pointer" href="#"
+        (click)="scrollTo('about',$event)">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+    </a>
+</section>

@@ -1,0 +1,10 @@
+.links a {
+    @apply  from-skyBlue/40 to-midnightBlue p-2 hover:p-4 rounded-full transition-all hover:bg-gradient-to-b
+     hover:shadow-2xl hover:shadow-skyBlue ;
+}
+.links a i {
+     @apply transition-all duration-300 text-2xl;
+}
+.links a:hover i {
+    @apply animate-spinOnce text-4xl; 
+}

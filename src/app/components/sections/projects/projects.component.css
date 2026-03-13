@@ -1,0 +1,3 @@
+.skill {
+    @apply px-2 py-1 text-[10px] border border-skyBlue/20 bg-skyBlue/5 text-skyBlue rounded-xl;
+}

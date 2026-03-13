@@ -1,26 +1,25 @@
-<section class="max-w-full mx-auto relative py-10">
+<section class="max-w-full mx-auto ">
     <div [appScrollTrigger]="'animate-slideDown'"
-        class="opacity-0 relative flex items-center justify-center gap-4 my-16">
+        class="opacity-0 relative flex items-center justify-center gap-4 mt-36 mb-16">
         <h2 class="title text-white">Skills</h2>
         <div class="title-line bg-skyBlue"></div>
     </div>
 
     <div [appScrollTrigger]="'animate-slideUp'"
-        class="opacity-0 [animation-delay:0.2s] min-h-screen max-w-7xl text-white text-center pt-6 pb-20 px-6 mx-auto">
+        class="opacity-0 [animation-delay:0.2s] max-w-7xl text-white text-center">
 
         <div class="flex flex-wrap justify-center gap-3 mb-16">
             @for (cat of categories; track cat) {
             <button (click)="setTab(cat)" [class]="activeTab() === cat 
             ? 'bg-cyan-500 border-cyan-500 text-midnightBlue font-bold' 
             : 'bg-transparent border-skyBlue/35 text-gray-300 hover:bg-gray-800/50'"
-                class="flex items-center gap-2 px-6 py-2.5 rounded-full border transition-all duration-300 text-sm">
-                <span class="opacity-60 text-xs font-mono">&lt;/&gt;</span>
+                class="flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 text-sm">
                 {{ cat }}
             </button>
             }
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6  pt-6 pb-20 px-6 mx-auto">
             @for (skill of filteredSkills(); track skill.name ; let i = $index) {
             <div [appScrollTrigger]="'animate-slideUp'" class="opacity-0 group relative bg-[#0f172a]/40 border border-gray-800/60 p-4 rounded-2xl 
                     hover:border-cyan-500/40 hover:bg-[#1e293b]/40 hover:shadow-lg hover:shadow-azureBlue/30 transition-all duration-500 

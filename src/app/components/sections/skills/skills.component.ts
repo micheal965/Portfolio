@@ -25,8 +25,8 @@ export class SkillsComponent {
     'Frontend',
     'Backend',
     'Database',
-    'Concepts',
     'Tools & Technologies',
+    'Concepts',
     'Soft Skills',
   ];
   activeTab = signal('All Skills');

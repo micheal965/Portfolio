@@ -6,9 +6,9 @@
     </div>
 
     <div [appScrollTrigger]="'animate-slideUp'"
-        class="opacity-0 [animation-delay:0.2s] max-w-7xl text-white text-center">
+        class="opacity-0 [animation-delay:0.2s] max-w-7xl mx-auto text-white text-center">
 
-        <div class="flex flex-wrap justify-center gap-3 mb-16">
+        <div class="flex flex-wrap justify-center gap-3 mb-16 ">
             @for (cat of categories; track cat) {
             <button (click)="setTab(cat)" [class]="activeTab() === cat 
             ? 'bg-cyan-500 border-cyan-500 text-midnightBlue font-bold' 

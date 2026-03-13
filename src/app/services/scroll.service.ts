@@ -8,7 +8,7 @@ export class ScrollService {
   private observer!: IntersectionObserver;
 
   init(sections: string[]) {
-    const options = { root: null, rootMargin: '0px', threshold: 0.2 };
+    const options = { root: null, rootMargin: '0px', threshold: 0.1 };
 
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {

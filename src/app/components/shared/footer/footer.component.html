@@ -1,1 +1,116 @@
-<p>footer works!</p>
+<footer class="relative border-t border-gray-800 max-w-7xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-10">
+
+        <div [appScrollTrigger]="'animate-slideDown'" class="opacity-0 space-y-6">
+            <h2 class="text-2xl font-bold tracking-tight text-white">Micheal Ghobrial</h2>
+
+            <p class="text-gray-400 text-sm max-w-sm leading-relaxed">
+                Software Engineer specializing in ASP.NET Core and Angular, focused on building scalable web
+                applications and modern digital experiences.
+            </p>
+
+            <div class="flex gap-3">
+                <a href="https://www.linkedin.com/in/micheal-ghobrial" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:bg-skyBlue hover:border-skyBlue transition-all duration-300 text-white group"
+                    aria-label="LinkedIn Profile">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+
+                <a href="https://github.com/micheal965" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:bg-white hover:text-black hover:border-white transition-all duration-300 text-white group"
+                    aria-label="GitHub Profile">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M12 .5C5.73.5.9 5.33.9 11.6c0 4.84 3.13 8.95 7.48 10.4.55.1.75-.24.75-.53v-1.85c-3.04.66-3.68-1.3-3.68-1.3-.5-1.28-1.23-1.62-1.23-1.62-1-.7.07-.69.07-.69 1.1.08 1.69 1.13 1.69 1.13.98 1.67 2.57 1.19 3.2.9.1-.71.38-1.2.69-1.48-2.43-.28-4.99-1.21-4.99-5.4 0-1.19.42-2.17 1.12-2.94-.11-.28-.48-1.41.11-2.94 0 0 .92-.3 3.01 1.12.87-.24 1.8-.36 2.72-.36.92 0 1.85.12 2.72.36 2.09-1.42 3.01-1.12 3.01-1.12.59 1.53.22 2.66.11 2.94.7.77 1.12 1.75 1.12 2.94 0 4.2-2.57 5.11-5.02 5.38.39.34.73 1 .73 2.02v3c0 .29.2.64.76.53 4.34-1.45 7.47-5.56 7.47-10.4C23.1 5.33 18.27.5 12 .5z" />
+                    </svg>
+                </a>
+                <a href="https://wa.me/201201605049" target="_blank" rel="noopener noreferrer"
+                    class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] transition-all duration-300 text-white group"
+                    aria-label="Chat on WhatsApp">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.43 5.632 1.43h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div [appScrollTrigger]="'animate-slideDown'" class="opacity-0 [animation-delay:0.3s]">
+
+            <h3 class="text-lg font-semibold mb-6 text-white">Useful Links</h3>
+            <ul class="space-y-4 text-gray-400 text-sm">
+                <li><a href="#" (click)="scrollTo('hero',$event)" class="hover:text-white transition-colors">Home</a>
+                </li>
+                <li><a href="#" (click)="scrollTo('about',$event)" class="hover:text-white transition-colors">About</a>
+                </li>
+                <li><a href="#" (click)="scrollTo('experience',$event)"
+                        class="hover:text-white transition-colors">Experience</a></li>
+                <li><a href="#" (click)="scrollTo('projects',$event)"
+                        class="hover:text-white transition-colors">Projects</a>
+                </li>
+                <li><a href="#" (click)="scrollTo('contact',$event)"
+                        class="hover:text-white transition-colors">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <div [appScrollTrigger]="'animate-slideDown'" class="opacity-0 [animation-delay:0.5s]">
+            <h3 class="text-lg font-semibold mb-6 text-white">Tech Stack</h3>
+            <ul class="space-y-4 text-gray-400 text-sm">
+                <li class="flex items-center">ASP.NET Core Web API Development</li>
+                <li class="flex items-center">Angular & TypeScript</li>
+                <li class="flex items-center">Database Design & Management</li>
+                <li class="flex items-center">AI Integration</li>
+            </ul>
+        </div>
+
+        <div [appScrollTrigger]="'animate-slideDown'"
+            class="text-gray-200 text-sm leading-relaxed opacity-0 [animation-delay:0.7s]">
+            <h3 class="text-lg font-semibold mb-6 text-white">Contact Us</h3>
+
+            <p class="flex items-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="w-5 h-5 mr-3 shrink-0">
+                    <path fill-rule="evenodd"
+                        d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                        clip-rule="evenodd" />
+                </svg>
+                Cairo, Egypt
+            </p>
+
+            <a href="tel:+201201605049"
+                class="flex items-center mb-4 font-medium text-white/80 hover:text-white transition-colors group">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="w-5 h-5 mr-3 shrink-0 group-hover:scale-110 transition-transform">
+                    <path fill-rule="evenodd"
+                        d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l.715 2.861c.113.451-.03.934-.37 1.274l-1.36 1.36a11.915 11.915 0 0 0 5.296 5.296l1.36-1.36c.34-.34.823-.483 1.274-.37l2.861.715c.84.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z"
+                        clip-rule="evenodd" />
+                </svg>
+                +20 1201605049
+            </a>
+
+            <a href="mailto:michealghobriall&#64;gmail.com"
+                class="flex items-center font-medium text-white/80 hover:text-white transition-colors group">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="w-5 h-5 mr-3  shrink-0 group-hover:scale-110 transition-transform">
+                    <path
+                        d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
+                    <path
+                        d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
+                </svg>
+                michealghobriall&#64;gmail.com
+            </a>
+        </div>
+    </div>
+
+    <div [appScrollTrigger]="'animate-slideDown'"
+        class="bg-slate-800/90 border-t border-gray-800 flex items-center justify-center rounded-sm py-3 sm:py-5 opacity-0 [animation-delay:0.9s]">
+        <div class="text-center text-xs tracking-tight sm:tracking-wider text-white">
+            &copy; Copyright <span class="font-bold uppercase ">Micheal Ghobrial</span> All Rights
+            Reserved
+        </div>
+    </div>
+</footer>

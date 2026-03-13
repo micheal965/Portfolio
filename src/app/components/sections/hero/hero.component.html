@@ -1,6 +1,6 @@
 <section class="relative min-h-screen flex flex-col items-center justify-center text-white overflow-hidden">
     <div class="relative z-10 text-center px-4">
-        <div [appScrollTrigger]="'animate-slideDown'" class="[animation-delay:0.2s]">
+        <div [appScrollTrigger]="'animate-slideDown'" class="opacity-0 [animation-delay:0.2s]">
             <p class="text-gray-400 text-2xl mb-2">Hello, I'm</p>
 
             <h1 class="text-6xl md:text-7xl font-bold mb-4 tracking-tight">
@@ -22,7 +22,7 @@
         <p class="text-gray-400 mb-10 max-w-md mx-auto">Engineering powerful frontend and backend solutions</p>
 
 
-        <div [appScrollTrigger]="'animate-slideUp'" class="opacity-0  [animation-delay:0.8s]">
+        <div [appScrollTrigger]="'animate-slideUp'" class="opacity-0 [animation-delay:0.8s]">
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
                 <button
                     class="px-8 py-3 bg-skyBlue text-black font-bold rounded-xl shadow-lg hover:shadow-skyBlue/40 hover:scale-105 transition-all">
@@ -49,11 +49,5 @@
             <a href="https://wa.me/201201605049" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
     </div>
-
-    <a class="absolute bottom-28 animate-bounce text-slate-300 hover:text-skyBlue cursor-pointer" href="#"
-        (click)="scrollTo('about',$event)">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-    </a>
+    
 </section>

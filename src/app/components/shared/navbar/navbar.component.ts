@@ -28,6 +28,7 @@ export class NavbarComponent {
     this.activeSection$ = this.scrollService.activeSection$;
   }
   scrollTo(sectionId: string, event: Event) {
+    console.log(sectionId);
     event.preventDefault();
     this.scrollService.scrollTo(sectionId);
   }

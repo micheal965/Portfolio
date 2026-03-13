@@ -36,7 +36,7 @@
 
     <!-- Mobile Menu (hidden by default) -->
     <nav *ngIf="isMenuOpen" class="lg:hidden flex flex-col gap-1 bg-midnightBlue text-white p-8 z-50">
-        <ul class="mobLinks flex flex-col  gap-4 border-b border-skyBlue/30 pb-4">
+        <ul class="mobLinks flex flex-col gap-2 sm:gap-4 border-b border-skyBlue/30 pb-4">
             <li class="links" *ngFor="let link of navLinks" [class.active]="(activeSection$ |async )=== link.id">
                 <a href="#" (click)="scrollTo(link.id, $event)">{{ link.label }}</a>
             </li>

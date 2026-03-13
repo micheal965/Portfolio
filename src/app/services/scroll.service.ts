@@ -8,7 +8,7 @@ export class ScrollService {
   private observer!: IntersectionObserver;
 
   init(sections: string[]) {
-    const options = { root: null, rootMargin: '0px', threshold: 0.6 };
+    const options = { root: null, rootMargin: '0px', threshold: 0.2 };
 
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -24,13 +24,14 @@ export class ScrollService {
     });
   }
 
-scrollTo(sectionId: string, offset: number = 90) {
-  const section = document.getElementById(sectionId);
-  if (section) {
-    const y = section.getBoundingClientRect().top + window.pageYOffset - offset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
+  scrollTo(sectionId: string, offset: number = 90) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const y =
+        section.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
   }
-}
 
   disconnect() {
     if (this.observer) this.observer.disconnect();

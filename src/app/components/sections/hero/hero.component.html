@@ -24,11 +24,11 @@
 
         <div [appScrollTrigger]="'animate-slideUp'" class="opacity-0 [animation-delay:0.8s]">
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-                <button
+                <button (click)="scrollTo('projects',$event)"
                     class="px-8 py-3 bg-skyBlue text-black font-bold rounded-xl shadow-lg hover:shadow-skyBlue/40 hover:scale-105 transition-all">
-                    View My Work
+                    View My Projects
                 </button>
-                <button
+                <button (click)="scrollTo('contact',$event)"
                     class="px-8 py-3 bg-black/40 border border-skyBlue/40 rounded-xl hover:bg-gray-800 transition-all">
                     Get In Touch
                 </button>
@@ -49,5 +49,5 @@
             <a href="https://wa.me/201201605049" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
     </div>
-    
+
 </section>

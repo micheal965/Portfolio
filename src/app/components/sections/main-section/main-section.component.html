@@ -1,0 +1,17 @@
+<section class="max-w-full mx-auto ">
+    <div [appScrollTrigger]="'animate-slideDown'"
+        class="opacity-0 relative flex items-center justify-center gap-4 my-36">
+        <h2 class="title text-white">{{title}}</h2>
+        <div class="title-line bg-skyBlue"></div>
+    </div>
+    <div [appScrollTrigger]="'animate-slideUp'" class="opacity-0 [animation-delay:0.2s] max-w-7xl mx-auto">
+        <ng-content />
+    </div>
+    <ng-content select="[education],[experience]" class="mx-auto"></ng-content>
+
+    <div [appScrollTrigger]="'animate-slideUp'"
+        class="opacity-0 [animation-delay:0.2s] lg:max-w-3xl mx-auto text-center rounded-3xl overflow-hidden backdrop-blur-md bg-gray-900/40 shadow-[0_0_30px_rgba(66,226,184,0.2)]">
+        <ng-content select="[contact]" />
+    </div>
+
+</section>

@@ -1,46 +1,35 @@
-<section class="max-w-full mx-auto ">
-    <div [appScrollTrigger]="'animate-slideDown'"
-        class="opacity-0 relative flex items-center justify-center gap-4 mt-36 mb-16">
-        <h2 class="title text-white">Skills</h2>
-        <div class="title-line bg-skyBlue"></div>
-    </div>
-
-    <div [appScrollTrigger]="'animate-slideUp'"
-        class="opacity-0 [animation-delay:0.2s] max-w-7xl mx-auto text-white text-center">
-
-        <div class="flex flex-wrap justify-center gap-3 mb-16 ">
-            @for (cat of categories; track cat) {
-            <button (click)="setTab(cat)" [class]="activeTab() === cat 
+<app-main-section title="Skills" class="text-white text-center">
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+        @for (cat of categories; track cat) {
+        <button (click)="setTab(cat)" [class]="activeTab() === cat 
             ? 'bg-cyan-500 border-cyan-500 text-midnightBlue font-bold' 
             : 'bg-transparent border-skyBlue/35 text-gray-300 hover:bg-gray-800/50'"
-                class="flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 text-sm">
-                {{ cat }}
-            </button>
-            }
-        </div>
+            class="flex items-center gap-2 px-3 py-1.5 rounded-full border transition-all duration-300 text-sm">
+            {{ cat }}
+        </button>
+        }
+    </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6  pt-6 pb-20 px-6 mx-auto">
-            @for (skill of filteredSkills(); track skill.name ; let i = $index) {
-            <div [appScrollTrigger]="'animate-slideUp'" class="opacity-0 group relative bg-[#0f172a]/40 border border-gray-800/60 p-4 rounded-2xl 
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6  pt-6 pb-20 px-6 mx-auto">
+        @for (skill of filteredSkills(); track skill.name ; let i = $index) {
+        <div [appScrollTrigger]="'animate-slideUp'" class="opacity-0 group relative bg-[#0f172a]/40 border border-gray-800/60 p-4 rounded-2xl 
                     hover:border-cyan-500/40 hover:bg-[#1e293b]/40 hover:shadow-lg hover:shadow-azureBlue/30 transition-all duration-500 
                     cursor-pointer overflow-hidden" [style.animationDelay]="(Math.floor(i / 4) * 200) + 'ms'">
 
-                <div
-                    class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-10 blur transition duration-500">
-                </div>
-
-                <div
-                    class="relative z-10 w-14 h-14 bg-skyBlue/20 rounded-full flex items-center justify-center mx-auto mb-4
-                      group-hover:scale-110 group-hover:shadow-md group-hover:shadow-sky-300/35 transition-all duration-300">
-                    <img [src]="skill.icon" alt="{{skill.name}} icon" class="w-8 h-8" />
-                </div>
-
-                <h3 class="relative z-10 text-sm font-semibold tracking-tight">{{ skill.name }}</h3>
-                <p class="relative z-10 text-xs text-gray-500 mt-1 font-medium tracking-wide">{{
-                    skill.category }}</p>
+            <div
+                class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl opacity-0 group-hover:opacity-10 blur transition duration-500">
             </div>
-            }
-        </div>
 
+            <div
+                class="relative z-10 w-14 h-14 bg-skyBlue/20 rounded-full flex items-center justify-center mx-auto mb-4
+                      group-hover:scale-110 group-hover:shadow-md group-hover:shadow-sky-300/35 transition-all duration-300">
+                <img [src]="skill.icon" alt="{{skill.name}} icon" class="w-8 h-8" />
+            </div>
+
+            <h3 class="relative z-10 text-sm font-semibold tracking-tight">{{ skill.name }}</h3>
+            <p class="relative z-10 text-xs text-gray-500 mt-1 font-medium tracking-wide">{{
+                skill.category }}</p>
+        </div>
+        }
     </div>
-</section>
+</app-main-section>

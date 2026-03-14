@@ -1,11 +1,12 @@
 import { Component, computed, signal } from '@angular/core';
 import { ScrollTriggerDirective } from '../../../directives/scroll-trigger.directive';
 import { NgIf } from '@angular/common';
+import { MainSectionComponent } from '../main-section/main-section.component';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [ScrollTriggerDirective, NgIf],
+  imports: [ScrollTriggerDirective, NgIf, MainSectionComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.css',
 })
@@ -94,6 +95,23 @@ export class ProjectsComponent {
       image: './assets/projects/megamart.png',
       sourceCode: 'https://github.com/micheal965/E-Commerce-Application',
       liveDemo: 'https://e-commerce-dusky-five-97.vercel.app',
+    },
+    {
+      title: 'Franshy Handmade',
+      status: 'Completed',
+      type: 'Full Stack',
+      description:
+        'Franshy Handmade — an e-commerce website for browsing and buying handmade products.',
+      techStack: [
+        'ASP.NET MVC',
+        'Entity Framework Core',
+        'SQL Server',
+        'Payment Gateway Integration (Stripe)',
+        'Bootstrap',
+      ],
+      image: './assets/projects/franshy.png',
+      sourceCode: 'https://github.com/micheal965/Asp.NET-MVC-E-commerce',
+      liveDemo: null,
     },
     {
       title: 'TradeX',

@@ -1,11 +1,12 @@
 import { NgFor, NgSwitch, NgSwitchCase } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { ScrollTriggerDirective } from '../../../directives/scroll-trigger.directive';
+import { MainSectionComponent } from "../main-section/main-section.component";
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [NgFor, NgSwitch, NgSwitchCase, ScrollTriggerDirective],
+  imports: [NgFor, NgSwitch, NgSwitchCase, ScrollTriggerDirective, MainSectionComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })

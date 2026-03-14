@@ -1,112 +1,102 @@
-<section class="max-w-full mx-auto ">
-    <div [appScrollTrigger]="'animate-slideDown'"
-        class="opacity-0 relative flex items-center justify-center gap-4 mt-36 mb-16">
-        <h2 class="title">Projects</h2>
-        <div class="title-line"></div>
-    </div>
-
-    <div class="relative max-w-7xl text-white text-center pt-6 pb-20 mx-auto">
-        <div class="flex flex-wrap justify-center gap-3 mb-16">
-            @for (cat of categories; track cat) {
-            <button (click)="setCategory(cat)" [class]="selectedCategory() === cat 
+<app-main-section title="Projects" class="relative text-white text-center">
+    <div class="flex flex-wrap justify-center gap-3 mb-14">
+        @for (cat of categories; track cat) {
+        <button (click)="setCategory(cat)" [class]="selectedCategory() === cat 
             ? 'bg-cyan-500 border-cyan-500 text-midnightBlue font-bold' 
             : 'bg-transparent border-skyBlue/35 text-gray-300 hover:bg-gray-800/50'"
-                class="flex items-center gap-4 px-4 py-1.5 rounded-full border transition-all duration-300 text-sm">
-                {{ cat }}
-            </button>
-            }
-        </div>
+            class="flex items-center gap-4 px-4 py-1.5 rounded-full border transition-all duration-300 text-sm">
+            {{ cat }}
+        </button>
+        }
+    </div>
 
-        <div class="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 text-left items-start">
-            @for (project of filteredProjects(); track project.title) {
-            <div [appScrollTrigger]="'animate-slideUp'"
-                class="opacity-0 bg-midnightBlue rounded-2xl overflow-hidden border border-gray-800 flex flex-col hover:shadow-lg hover:shadow-skyBlue/30 tranisition-shadow duration-200">
-                <div class="relative h-48 bg-gray-700">
-                    <img [src]="project.image" class="w-full h-full object-cover opacity-80" alt="{{project.title}}">
-                    <span [class]="project.status === 'Completed' ? 'bg-blue-600' : 'bg-yellow-600'"
-                        class="absolute top-3 right-3 text-[10px] px-2 py-1 rounded-full flex items-center gap-1">
-                        <span class="w-1.5 h-1.5 rounded-full bg-white"></span> {{ project.status }}
-                    </span>
+    <div class="mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 text-left items-start">
+        @for (project of filteredProjects(); track project.title) {
+        <div [appScrollTrigger]="'animate-slideUp'"
+            class="opacity-0 bg-midnightBlue rounded-2xl overflow-hidden border border-gray-800 flex flex-col hover:shadow-lg hover:shadow-skyBlue/30 tranisition-shadow duration-200">
+            <div class="relative h-48 bg-gray-700">
+                <img [src]="project.image" class="w-full h-full object-cover opacity-80" alt="{{project.title}}">
+                <span [class]="project.status === 'Completed' ? 'bg-blue-600' : 'bg-yellow-600'"
+                    class="absolute top-3 right-3 text-[10px] px-2 py-1 rounded-full flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-white"></span> {{ project.status }}
+                </span>
+            </div>
+
+            <div class="p-5">
+                <div class="flex flex-col sm:flex-row justify-between items-start  mb-2">
+                    <h3 class="font-bold text-lg truncate">{{ project.title }}</h3>
+                    <span class="text-[10px] self-end text-sky-400 border border-sky-400/30 px-2 py-0.5 rounded-md">{{
+                        project.type }}</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-4 line-clamp-2 leading-relaxed">
+                    {{ project.description }}
+                </p>
+
+                <h4 class="text-[10px] uppercase tracking-wider text-sky-400 font-bold mb-3">Tech Stack</h4>
+                <div class="flex items-center flex-wrap gap-2 mb-6">
+                    @for (tech of project.techStack.slice(0, 6); track tech) {
+                    <span class="skill"> {{ tech }} </span>
+                    }
+                    @if (project.techStack.length > 5) {
+                    <span class="text-gray-500 text-xs">+{{ project.techStack.length - 5 }}</span>
+                    }
                 </div>
 
-                <div class="p-5">
-                    <div class="flex flex-col sm:flex-row justify-between items-start  mb-2">
-                        <h3 class="font-bold text-lg truncate">{{ project.title }}</h3>
-                        <span
-                            class="text-[10px] self-end text-sky-400 border border-sky-400/30 px-2 py-0.5 rounded-md">{{
-                            project.type }}</span>
-                    </div>
-                    <p class="text-gray-400 text-sm mb-4 line-clamp-2 leading-relaxed">
-                        {{ project.description }}
-                    </p>
+                <div class="flex flex-col sm:flex-row gap-3 mt-auto">
+                    <a *ngIf="project.sourceCode" [href]="project.sourceCode" target="_blank"
+                        class="flex-1 py-2 bg-gradient-to-r from-sky-400 to-indigo-600 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        Source Code
+                    </a>
 
-                    <h4 class="text-[10px] uppercase tracking-wider text-sky-400 font-bold mb-3">Tech Stack</h4>
-                    <div class="flex items-center flex-wrap gap-2 mb-6">
-                        @for (tech of project.techStack.slice(0, 6); track tech) {
-                        <span class="skill"> {{ tech }} </span>
-                        }
-                        @if (project.techStack.length > 5) {
-                        <span class="text-gray-500 text-xs">+{{ project.techStack.length - 5 }}</span>
-                        }
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row gap-3 mt-auto">
-                        <a *ngIf="project.sourceCode" [href]="project.sourceCode" target="_blank"
-                            class="flex-1 py-2 bg-gradient-to-r from-sky-400 to-indigo-600 rounded-lg text-sm font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2">
-                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                            Source Code
-                        </a>
-
-                        <a *ngIf="project.liveDemo" [href]=" project.liveDemo" target="_blank"
-                            class="flex-1 py-2 bg-black/40 border border-gray-700 rounded-lg text-sm hover:bg-gray-800 transition-colors flex items-center justify-center gap-2">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                            </svg>
-                            Live Demo
-                        </a>
-                    </div>
+                    <a *ngIf="project.liveDemo" [href]=" project.liveDemo" target="_blank"
+                        class="flex-1 py-2 bg-black/40 border border-gray-700 rounded-lg text-sm hover:bg-gray-800 transition-colors flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                        Live Demo
+                    </a>
                 </div>
             </div>
-            }
-
         </div>
-        <div [appScrollTrigger]="'animate-slideDown'" class="opacity-0 flex justify-center items-center pt-16 ">
+        }
+
+    </div>
+    <div [appScrollTrigger]="'animate-slideDown'" class="opacity-0 flex justify-center items-center pt-16 ">
+        <div class="relative w-full max-w-3xl p-[1px] rounded-3xl bg-gradient-to-br from-blue-500/30 to-purple-500/30">
             <div
-                class="relative w-full max-w-3xl p-[1px] rounded-3xl bg-gradient-to-br from-blue-500/30 to-purple-500/30">
+                class="bg-[#0b1120]  hover:shadow-lg hover:shadow-skyBlue/40 rounded-[calc(1.5rem-1px)] p-12 text-center shadow-2xl overflow-hidden relative transition-shadow duration-200">
+
                 <div
-                    class="bg-[#0b1120]  hover:shadow-lg hover:shadow-skyBlue/40 rounded-[calc(1.5rem-1px)] p-12 text-center shadow-2xl overflow-hidden relative transition-shadow duration-200">
+                    class="absolute inset-0 bg-gradient-to-tr from-sky-900/10 via-transparent to-purple-900/10 pointer-events-none">
+                </div>
 
-                    <div
-                        class="absolute inset-0 bg-gradient-to-tr from-sky-900/10 via-transparent to-purple-900/10 pointer-events-none">
-                    </div>
+                <div class="relative z-10">
+                    <h2 class="text-xl sm:text-3xl md:text-4xl font-bold mb-4">
+                        <span
+                            class="bg-gradient-to-br from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
+                            Explore More Projects
+                        </span>
+                    </h2>
 
-                    <div class="relative z-10">
-                        <h2 class="text-xl sm:text-3xl md:text-4xl font-bold mb-4">
-                            <span
-                                class="bg-gradient-to-br from-cyan-400 via-indigo-400 to-purple-900 bg-clip-text text-transparent">
-                                Explore More Projects
-                            </span>
-                        </h2>
+                    <p class="text-gray-400 text-md sm:text-lg mb-8 max-w-lg mx-auto leading-relaxed">
+                        Browse my complete project archive and technical contributions on GitHub.
+                    </p>
 
-                        <p class="text-gray-400 text-md sm:text-lg mb-8 max-w-lg mx-auto leading-relaxed">
-                            Browse my complete project archive and technical contributions on GitHub.
-                        </p>
-
-                        <a href="https://github.com/micheal965" target="_blank"
-                            class="text-xs sm:text-base inline-flex items-center gap-3 bg-skyBlue/95 text-midnightBlue hover:bg-skyBlue font-semibold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(34,211,238,0.3)]">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
-                            View GitHub Profile
-                        </a>
-                    </div>
+                    <a href="https://github.com/micheal965" target="_blank"
+                        class="text-xs sm:text-base inline-flex items-center gap-3 bg-skyBlue/95 text-midnightBlue hover:bg-skyBlue font-semibold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(34,211,238,0.3)]">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        View GitHub Profile
+                    </a>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</app-main-section>

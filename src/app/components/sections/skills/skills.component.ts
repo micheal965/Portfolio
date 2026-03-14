@@ -1,5 +1,6 @@
 import { Component, computed, signal } from '@angular/core';
 import { ScrollTriggerDirective } from '../../../directives/scroll-trigger.directive';
+import { MainSectionComponent } from "../main-section/main-section.component";
 interface Skill {
   name: string;
   category:
@@ -14,7 +15,7 @@ interface Skill {
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [ScrollTriggerDirective],
+  imports: [ScrollTriggerDirective, MainSectionComponent],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.css',
 })

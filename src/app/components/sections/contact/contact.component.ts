@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { ScrollTriggerDirective } from '../../../directives/scroll-trigger.directive';
+import { MainSectionComponent } from '../main-section/main-section.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ScrollTriggerDirective],
+  imports: [MainSectionComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
